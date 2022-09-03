@@ -8,7 +8,11 @@ fn main() {
 
     let nums: Vec<&str> = input.split(' ').collect();
     
-    println!("Converted your input to hex: {}", rgb_to_hex(nums[0].trim().parse().unwrap(), nums[1].trim().parse().unwrap(), nums[2].trim().parse().unwrap()));
+    println!("Converted your input to hex: {}", rgb_to_hex(str_to_byte(nums[0]), str_to_byte(nums[1]), str_to_byte(nums[2])));
+}
+
+fn str_to_byte(s: &str) -> u8 {
+    s.trim().parse().unwrap()
 }
 
 
