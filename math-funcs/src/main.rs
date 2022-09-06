@@ -11,7 +11,7 @@ fn main() {
 
 fn max(x: i64, y: i64) -> i64 {
     let c = x - y;  
-    println!("{}", (c >> 31) & 1);
+    // println!("{}", (c >> 31) & 1);
     let k = (c >> 31) & 1;  
     (x - k * c) as i64
 }
