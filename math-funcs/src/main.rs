@@ -7,11 +7,13 @@ fn main() {
     assert_eq!(round(43.67), 44);
     assert_eq!(even(1), false);
     assert_eq!(pow(25, 3), 15625);
+    assert_eq!(double(25), 50);
+    assert_eq!(half(30), 15);
 }
 
 fn max(x: i64, y: i64) -> i64 {
     let c = x - y;  
-    // println!("{}", (c >> 31) & 1);
+    println!("{}", (c >> 31) & 1);
     let k = (c >> 31) & 1;  
     (x - k * c) as i64
 }
@@ -34,6 +36,14 @@ fn round(x: f64) -> i64 {
 
 fn even(x: i64) -> bool {
     if x & 0 == 1 { true } else { false }
+}
+
+fn double(x: i64) -> i64 {
+    x << 1
+}
+
+fn half(x: i64) -> i64 {
+    x >> 1
 }
 
 fn pow(mut x: i64, mut y: i64) -> i64 {
